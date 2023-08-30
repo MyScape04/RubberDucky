@@ -8,6 +8,4 @@ One of its main jobs is to help us check how secure computer systems are and fin
 
 We'll use the Raspberry Pi Pico and also other tools like GitHub, Metasploit, and Netcat. To control everything, we'll be using Python. By the end of the project, we'll have our very own customized Rubber Ducky ready to go.
 
-By the end of the project, you'll find here our custom-made Rubber Ducky scripts, the exploits, and the code used – everything you need to delve into the world of cybersecurity exploration and experimentation.
-
-
+We'll walk through practical examples, including reverse shells, with dual demonstrations on both Windows and Linux systems. As part of the package, you'll find the Rubber Ducky scripts, exploits, and code that can serve as hands-on references for your own security explorations.
