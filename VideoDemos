@@ -1,1 +1,64 @@
+Reverse shell demo:
+https://youtu.be/uyggPbJacHo
 
+Windows:
+As you'll notice, in Kali Linux, you can employ the "reverse_tcp" exploit to establish a connection with the target by employing a simple curl command in the terminal.
+
+Linux:
+Once Metasploit is running, use the "use" command to specify the path of the desired payload.
+We employ the payload php/meterpreter/reverse_tcp, a type of payload within the Metasploit Framework, to establish a Meterpreter connection to a remote machine through a reverse PHP shell.
+This payload proves particularly valuable in scenarios where the target machine hosts a web server running PHP and lacks alternative access avenues through vulnerabilities or valid credentials.
+
+
+Backdoor and Persistent Reverse Shell demo:
+https://www.youtube.com/watch?v=YO-r0g9LXNc
+
+Windows:
+The "windows/local/persistence_service" payload is a tool within Metasploit that enables attackers to maintain persistent access on a Windows operating system machine.
+This payload operates by creating a Windows service that starts automatically when the machine boots up. 
+Once the initial connection is established, the persistence service allows attackers to reconnect to the machine without needing to exploit the same vulnerability again.
+
+Linux:
+First, we edit our ducky script.
+
+In this script, we create a hidden folder named ".outlock".
+
+We change into it so that when the payload is downloaded, it's placed inside that folder.
+We give execution permissions and run it; in Kali, we'll observe that it functions and establishes a session.
+
+Open another terminal.
+Execute an "echo" with the complete service structure.
+
+From this point, we need to use sudo. In this case, since I know the password, I enter it.
+We move that file to the location of the service.
+
+We run systemctl daemon-reload to reload all services.
+We restart the service we created, and now it should open a shell in Kali. Unlike before, this shell is directly with root user.
+We enable it to run automatically when the machine starts.
+
+
+Cryptography in Passwords and Hashes demo:
+https://www.youtube.com/watch?v=EBP1yM8FTeM
+
+We utilize read -p to gather necessary parameters from the user for script functionality.
+
+We define the count of the number of hashes we're going to crack.
+
+We initiate the main loop that checks if there are uncracked hashes in the hash file. The script ends when no hashes remain in the file.
+
+We read each hash line from the hash file individually.
+We echo the hash about to be cracked.
+
+We set up a loop that uses different hash modules in hashcat from 0 to 10000.
+We clear hashcat history to avoid issues.
+We run the hashcat command with -m (module), -o for the output file, the hash to crack, and the wordlist for dictionary attack.
+
+Next, we check if the hash has been cracked. We use an if statement to verify the success of the previous command, indicating a cracked hash using: if [ "$(echo $?)" == "0" ]; then.
+
+We echo the number of cracked hash and increment the count, echo the module used for cracking, and finally create a separator for clarity.
+We remove the cracked hash from the hash file and proceed to the next hash.
+
+For error handling, we use: elif [ "$hashtypes" == "10000" ] && [ "(echo $?)" != "0" ]; then. This checks if hashTypes has reached ten thousand and the error code isn't 0. It echoes that the hash was unable to be cracked, creates a file called "UnCracked.txt," places the uncrackable hash inside, adds a separator, and removes the hash from the file to continue with the remaining hashes.
+
+
+You can find the payloads in the payloads section for both operational systems. The hash script can be found in "script". 
