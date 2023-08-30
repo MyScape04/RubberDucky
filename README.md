@@ -32,3 +32,5 @@ CONTROL ALT T: Key combination that opens the terminal on Linux systems.
 All the other keys like ALT or CONTROL you will find it on the Keycode.py
 
 REMEMBER, THIS RUBBER DUCKY IS CONFIGURED TO WORK WITH A SPANISH KEYBOARD!
+
+If you encounter difficulties finding examples online, I've uploaded  videos on YouTube to demonstrate various attacks. Additionally, you can find in this repo images of the script and payloads I employed, which should make things simpler for you.
